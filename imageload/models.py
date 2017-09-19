@@ -1,8 +1,15 @@
 from django.db import models
+from django import template
+from django.utils.safestring import mark_safe
+from django.template.defaultfilters import   stringfilter
 
 class Photo(models.Model):
     title = models.CharField(max_length=20)
     type = models.CommaSeparatedIntegerField(max_length=255, default="1,2",blank=True)
+    advertisement = models.BooleanField(default=False)
+
+
+
     def __str__(self):
         return self.title.encode('utf-8')
 
