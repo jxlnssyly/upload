@@ -39,3 +39,11 @@ def design(request):
 
     return render(request,'imageload/photography.html')
 
+def diary(request):
+
+    return render(request,'imageload/photography.html')
+
+def content(request,id):
+
+    return render(request,'imageload/content.html')
+

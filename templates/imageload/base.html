@@ -29,7 +29,7 @@
                 </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       {% for photography in photographyList %}
-                          <li><a href="#">{{ photography.title }}</a></li>
+                          <li><a href="{{ photography.id }}">{{ photography.title }}</a></li>
                       {% endfor %}
                   </ul>
               </div>
@@ -41,7 +41,7 @@
                 </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       {% for design in designList %}
-                          <li><a href="#">{{ design.title }}</a></li>
+                          <li><a href="{{ design.id }}">{{ design.title }}</a></li>
                       {% endfor %}
                   </ul>
               </div>
@@ -53,7 +53,7 @@
                 </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       {%   for diary in diaryList %}
-                          <li><a href="#">{{ diary.title }}</a></li>
+                          <li><a href="{{ diary.id }}">{{ diary.title }}</a></li>
                       {% endfor %}
 
                   </ul>
