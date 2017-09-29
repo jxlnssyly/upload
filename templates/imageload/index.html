@@ -6,8 +6,6 @@
 <section id="main_ad" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-
-
     <li data-target="#main_ad" data-slide-to="0" class="active"></li>
     <li data-target="#main_ad" data-slide-to="1"></li>
     <li data-target="#main_ad" data-slide-to="2"></li>
@@ -18,14 +16,14 @@
       {% for home in homeList %}
           {% if forloop.counter0 == 0 %}
               <div class="item active" data-image-lg="" data-image-xs="">
-                  <a href="/{{ home.type | typeFilter }}">
+                  <a href="{{ home.id }}">
                       <img class="caImage" src="{{ home | imageUrl }}" alt="">
                   </a>
               </div>
           {% else %}
               <div class="item" data-image-lg="" data-image-xs="">
-                  <a href="/{{ home.type | typeFilter }}">
-                      <img class="caImage" src="{{ home | imageUrl  }}" alt="">
+                  <a href="{{ home.id}}">
+                      <img class="caImage" src="{{ home  | imageUrl}}/" alt="">
                   </a></div>
           {% endif %}
       {% endfor %}

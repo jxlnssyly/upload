@@ -17,3 +17,4 @@ def typeFilter(value):
     if value == '3,':
         return 'diary'
     return ""
+

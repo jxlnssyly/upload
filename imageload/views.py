@@ -18,6 +18,29 @@ def index(request):
 
 
 
+
+    return render(request,'imageload/index.html',getBaseData())
+
+def photography(request):
+
+    return render(request,'imageload/photography.html',getBaseData())
+
+def design(request):
+
+    return render(request,'imageload/photography.html')
+
+def diary(request):
+
+    return render(request,'imageload/photography.html')
+
+def content(request,id):
+    objc = Photo.objects.filter(pk=id).first().images.all()
+    contex = getBaseData()
+    contex['obj'] = objc
+    return render(request,'imageload/content.html',contex)
+
+def getBaseData():
+
     homeList = Photo.objects.filter(advertisement=True) #首页轮播图
     photographyList = Photo.objects.filter(type='1,') #摄影
     designList = Photo.objects.filter(type='2,') #设计
@@ -29,21 +52,6 @@ def index(request):
         'diaryList': diaryList,
         'homeList': homeList
     }
-    return render(request,'imageload/index.html',contex)
 
-def photography(request):
-
-    return render(request,'imageload/photography.html')
-
-def design(request):
-
-    return render(request,'imageload/photography.html')
-
-def diary(request):
-
-    return render(request,'imageload/photography.html')
-
-def content(request,id):
-
-    return render(request,'imageload/content.html')
+    return contex
 
